@@ -22,7 +22,7 @@ int main()
 	sf::Sprite sprite(texture); // needed to draw the texture on screen
 
 	int RANDOM = rand() % 100000;
-	cout << RANDOM << endl;
+	cout << "Seed: " << RANDOM << endl;
 
 	siv::PerlinNoise Noise;
 	Noise.reseed(RANDOM);
