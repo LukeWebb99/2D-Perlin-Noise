@@ -40,7 +40,15 @@ int main()
 			int g = Noise.octaveNoise0_1(xoff, yoff, 8) * 255;
 			int b = Noise.octaveNoise0_1(xoff, yoff, 8) * 255;
 			
-			pixels[index] = r;
+			r > 255 ? r = 255 : r = r;
+			g > 255 ? g = 255 : g = g;
+			b > 255 ? b = 255 : b = b;
+
+			r < 0 ? r = 0 : r = r;
+			g < 0 ? g = 0 : g = g;
+			b < 0 ? b = 0 : b = b;
+
+			pixels[index + 0] = r;
 			pixels[index + 1] = g;
 			pixels[index + 2] = b;
 			pixels[index + 3] = 255;
